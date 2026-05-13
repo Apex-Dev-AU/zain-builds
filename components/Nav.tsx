@@ -1,5 +1,15 @@
 import Link from 'next/link';
-import { siteConfig } from '@/lib/site-config';
+
+const siteConfig = {
+  name: 'Zain Builds',
+
+  nav: [
+    { label: 'work', href: '/work' },
+    { label: 'notes', href: '/notes' },
+    { label: 'uses', href: '/uses' },
+    { label: 'now', href: '/now' },
+  ],
+};
 
 export function Nav() {
   return (
@@ -15,7 +25,7 @@ export function Nav() {
             aria-hidden="true"
           />
           <span className="text-[color:var(--color-fg)] transition-colors group-hover:text-[color:var(--color-accent)]">
-            {siteConfig.name.toLowerCase()}
+            {siteConfig.name}
           </span>
         </Link>
 
