@@ -1,15 +1,5 @@
 import Link from 'next/link';
-
-const siteConfig = {
-  name: 'Zain Builds',
-
-  nav: [
-    { label: 'work', href: '/work' },
-    { label: 'notes', href: '/notes' },
-    { label: 'uses', href: '/uses' },
-    { label: 'now', href: '/now' },
-  ],
-};
+import { siteConfig } from '@/lib/site-config';
 
 export function Nav() {
   return (
@@ -20,10 +10,7 @@ export function Nav() {
           className="group flex items-center gap-2.5 !border-b-0 text-sm font-semibold tracking-tight hover:!text-[color:var(--color-fg)]"
           aria-label={`${siteConfig.name} — home`}
         >
-          <span
-            className="dot dot-active"
-            aria-hidden="true"
-          />
+          <span className="dot dot-active" aria-hidden="true" />
           <span className="text-[color:var(--color-fg)] transition-colors group-hover:text-[color:var(--color-accent)]">
             {siteConfig.name}
           </span>

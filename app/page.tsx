@@ -6,7 +6,6 @@ import { ProjectList } from '@/components/ProjectList';
 export default function HomePage() {
   const recent = getRecentFeed(6);
   const featured = getAllProjects().slice(0, 4);
-  const nowUpdated = '[ADD DATE]';
 
   return (
     <>
@@ -18,20 +17,17 @@ export default function HomePage() {
             <div className="mb-6 flex items-center gap-3">
               <span className="dot dot-active" aria-hidden="true" />
               <span className="font-mono text-xs uppercase tracking-wider text-[color:var(--color-fg-3)]">
-                live · v0.1
+                live · v0.2
               </span>
             </div>
             <h1 className="text-3xl font-semibold leading-tight tracking-tight text-[color:var(--color-fg)] sm:text-4xl md:text-5xl">
-              A working archive of things being made and thought
-              about &mdash;{' '}
+              A working archive of projects, notes and experiments{' '}
               <span className="text-[color:var(--color-fg-2)]">
-                software, design, photography, and the machines
-                that get under my skin.
+                &mdash; things I&rsquo;m building, learning and slowly refining over time.
               </span>
             </h1>
             <p className="mt-6 font-mono text-sm text-[color:var(--color-fg-3)]">
-              Updated when there&rsquo;s something worth saying.
-              Quiet when there isn&rsquo;t.
+              Updated when there&rsquo;s something worth saying. Quiet when there isn&rsquo;t.
             </p>
           </div>
         </div>
@@ -43,16 +39,19 @@ export default function HomePage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-[10rem_1fr]">
             <div>
               <h2 className="label">/ now</h2>
-              <p className="mt-2 font-mono text-xs text-[color:var(--color-fg-3)]">
-                updated {nowUpdated}
-              </p>
+              <Link
+                href="/now"
+                className="mt-2 inline-block font-mono text-xs text-[color:var(--color-fg-3)] !border-b-0 hover:!text-[color:var(--color-accent)]"
+              >
+                more &rarr;
+              </Link>
             </div>
             <div className="max-w-[var(--width-prose)]">
               <p className="text-[color:var(--color-fg-2)]">
-                [ADD CURRENT FOCUS &mdash; one sentence about what
-                you&rsquo;re working on this week. Edit this on the
-                homepage and on{' '}
-                <Link href="/now">/now</Link>.]
+                Shaping the first real version of this site. Documenting the
+                Tiguan build properly. Turning recent AI website experiments
+                into proper project logs. Beginning the longer Zen Captures
+                story.
               </p>
             </div>
           </div>
@@ -63,20 +62,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-[10rem_1fr]">
             <div>
               <h2 className="label">/ recent</h2>
-              <div className="mt-2 flex flex-col gap-1">
-                <Link
-                  href="/notes"
-                  className="font-mono text-xs text-[color:var(--color-fg-3)] !border-b-0 hover:!text-[color:var(--color-accent)]"
-                >
-                  all notes &rarr;
-                </Link>
-                <Link
-                  href="/work"
-                  className="font-mono text-xs text-[color:var(--color-fg-3)] !border-b-0 hover:!text-[color:var(--color-accent)]"
-                >
-                  all work &rarr;
-                </Link>
-              </div>
+              <Link
+                href="/notes"
+                className="mt-2 inline-block font-mono text-xs text-[color:var(--color-fg-3)] !border-b-0 hover:!text-[color:var(--color-accent)]"
+              >
+                all notes &rarr;
+              </Link>
             </div>
             <div className="max-w-[var(--width-wide)]">
               <PostList items={recent} />

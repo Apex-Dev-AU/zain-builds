@@ -2,8 +2,6 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="mt-32 border-t border-[color:var(--color-border)]">
       <div className="mx-auto max-w-[var(--width-full)] px-6 py-10 sm:px-8">
@@ -25,9 +23,7 @@ export function Footer() {
 
           <div className="flex items-center gap-3 font-mono text-xs text-[color:var(--color-fg-3)]">
             <span className="dot dot-active" aria-hidden="true" />
-            <span>{siteConfig.author}</span>
-            <span className="text-[color:var(--color-border-2)]">·</span>
-            <span>© {year}</span>
+            <span>{siteConfig.identity}</span>
           </div>
         </div>
       </div>
