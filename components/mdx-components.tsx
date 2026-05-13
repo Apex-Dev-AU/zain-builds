@@ -1,4 +1,4 @@
-import type { MDXComponents } from 'next-mdx-remote/rsc';
+import type { ComponentProps } from 'react';
 import Link from 'next/link';
 
 export const mdxComponents: MDXComponents = {
