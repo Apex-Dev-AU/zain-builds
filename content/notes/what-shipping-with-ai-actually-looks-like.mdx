@@ -1,0 +1,116 @@
+---
+title: "What shipping with AI actually looks like"
+slug: "what-shipping-with-ai-actually-looks-like"
+date: "2026-03-04"
+kind: "log"
+project: "ai-website-experiments"
+tags:
+  - "ai"
+  - "next-js"
+  - "vercel"
+  - "workflow"
+summary: "First impressions from a few real sites built and deployed with AI assistance. Less hype, more workflow."
+draft: false
+---
+
+I&rsquo;ve now shipped a handful of real, live websites with
+AI assistance &mdash; not toys, not screenshots, actual sites
+people use. Two of them sit on real domains:{' '}
+[darksideautokit.com](https://darksideautokit.com) and
+[ADD EVENTS BUSINESS SITE]. A third, this one, is the most
+deliberate of the bunch.
+
+I want to write down what the workflow actually looks like
+before I forget the parts that were hard.
+
+## The shape of it
+
+The pattern that keeps working, across all three sites:
+
+1. **Write a brief in plain English first.** Not a feature
+   list. A document that says what the site is for, who
+   it&rsquo;s for, what it must do, what it must *not* do,
+   and what it should *feel* like. The AI is much better at
+   filling in code than at filling in intent. Give it intent
+   up front.
+2. **Make the architectural decisions yourself.** Stack,
+   page structure, content types, naming conventions. Once
+   those are decided, the AI is genuinely good at generating
+   what fits inside them. Skip this step and you get a
+   beautiful pile of disagreements.
+3. **Generate in small pieces.** Page by page. Component by
+   component. The smaller the unit, the better the output
+   and the easier it is to spot when something&rsquo;s
+   wrong.
+4. **Push to GitHub on day one.** Deploy to Vercel on day
+   one. Iterate against a real URL, not an idea of a site.
+5. **Read every line of code that gets generated.** This is
+   the part I keep meaning to skip and keep being punished
+   for. AI-generated code that you don&rsquo;t understand
+   is technical debt before it&rsquo;s even shipped.
+
+That&rsquo;s it. The whole workflow fits in five points.
+
+## What it&rsquo;s good at
+
+A non-exhaustive list, in rough order of impressiveness:
+
+- **Boilerplate.** All of it. Forever. The amount of time
+  saved here alone is meaningful.
+- **Reading and explaining code I didn&rsquo;t write.**
+  Especially other people&rsquo;s configs.
+- **Getting unstuck.** When I&rsquo;m staring at an error
+  message, the right prompt usually surfaces the issue
+  faster than searching.
+- **Translation between paradigms.** &ldquo;Rewrite this
+  React component as a Svelte one.&rdquo; &ldquo;Convert
+  this REST endpoint to GraphQL.&rdquo;
+- **The first version of anything.** A landing page, a
+  schema, a folder structure, a Tailwind theme. The first
+  version is almost free now.
+
+## What it&rsquo;s bad at
+
+A shorter list, but the items are important:
+
+- **Knowing when it&rsquo;s wrong.** It will produce
+  confident, plausible code that does the wrong thing.
+  You have to be the one checking.
+- **Holding a large mental model.** As a project grows,
+  the AI sees less and less of it at once. The system
+  starts to drift unless you keep pulling it back.
+- **Taste.** The default aesthetic is bland. You have to
+  fight for the design you actually want, every time.
+- **Knowing when to stop.** It will keep adding features,
+  options, edge cases. Restraint is on you.
+
+## What surprised me
+
+The biggest surprise wasn&rsquo;t how good the AI is at
+writing code. It was how much faster I learn *when I&rsquo;m
+not blocked*. The workflow above produces a working
+deployed site fast enough that I get to spend my attention
+on the interesting problems: design decisions, content,
+structure, the small details that make a site feel cared
+for.
+
+Before this workflow, those decisions came at the end of a
+two-week setup process and I was already exhausted by the
+time I got to them. Now they come on day two and I have
+energy for them.
+
+That&rsquo;s the actual unlock. Not &ldquo;AI writes my
+code.&rdquo; *AI removes the parts of building a website
+that were boring, so I can spend my real attention on the
+parts that matter.*
+
+## What I&rsquo;m doing differently this time
+
+This site is the most deliberate of the three because I
+wrote the brief in full before any code was generated. A
+Phase 1 strategy document. Architecture decided on paper.
+Design system as design tokens, not as a vibe. Content
+types defined before content was written.
+
+I&rsquo;ll know in six months whether the discipline of
+doing it that way was worth it. My guess is yes.
